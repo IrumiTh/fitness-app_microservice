@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/userservice/userservice/pom.xml" />
+        <option value="$PROJECT_DIR$/activityservice/activityservice/pom.xml" />
       </list>
     </option>
   </component>
