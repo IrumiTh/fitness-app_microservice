@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 @Data
-@Document(collation = "activities")
+@Document(collection = "activities")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -35,7 +35,7 @@ public class Activity {
 
     @CreatedDate
     private LocalDateTime createdAt;
-    
+
     @LastModifiedDate
     private LocalDateTime updatedAt;
 }
