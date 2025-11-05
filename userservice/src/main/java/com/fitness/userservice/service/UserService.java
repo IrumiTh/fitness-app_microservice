@@ -59,4 +59,8 @@ public class UserService {
 
         return userRestonse;
     }
+
+    public Boolean existByUserId(String userId) {
+        return repository.existsById(userId);
+    }
 }
