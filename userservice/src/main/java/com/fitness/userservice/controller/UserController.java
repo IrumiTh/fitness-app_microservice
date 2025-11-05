@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class UserController {
     private UserService userService;
+
+
+
     @GetMapping("/{userId}")
     public ResponseEntity<UserRestonse> getUserProfile(@PathVariable String userId){
         return ResponseEntity.ok(userService.getUserProfile(userId));
