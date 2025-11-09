@@ -22,8 +22,10 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    prefer-ip-address: true     # ✅ ensures Eureka registers with IP instead of PC name
-    hostname: localhost         # ✅ makes discovery consistent
+    prefer-ip-address: true
+    hostname: localhost
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
 
 
 
