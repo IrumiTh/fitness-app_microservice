@@ -17,6 +17,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-  instance:
-    prefer-ip-address: true     # ✅ ensures Eureka registers with IP instead of PC name
-    hostname: localhost         # ✅ makes discovery consistent
+#  instance:
+#    prefer-ip-address: true     # ✅ ensures Eureka registers with IP instead of PC name
+#    hostname: localhost         # ✅ makes discovery consistent

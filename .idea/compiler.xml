@@ -8,18 +8,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="aiservice" />
-        <module name="eureka" />
         <module name="configserver" />
+        <module name="activityservice" />
+        <module name="eureka" />
+        <module name="userservice" />
       </profile>
-      <profile name="Annotation profile for userservice" enabled="true">
+      <profile name="Annotation profile for activityservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
-        <module name="activityservice" />
-        <module name="userservice" />
         <module name="activityservice (1)" />
       </profile>
     </annotationProcessing>
