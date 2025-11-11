@@ -20,7 +20,19 @@ public class UserService {
     public UserRestonse register(RegisterRequest request) {
 
         if (repository.existsByEmail(request.getEmail())) {
-            throw new RuntimeException("Email already exist");
+            User existinguser = repository.findByEmail(request.getEmail());
+
+            UserRestonse userRestonse = new UserRestonse();
+            userRestonse.setId(existinguser.getId());
+            userRestonse.setKeyClockId(existinguser.getKeyClockId());
+            userRestonse.setEmail(existinguser.getEmail());
+            userRestonse.setPassword(existinguser.getPassword());
+            userRestonse.setFirstName(existinguser.getFirstName());
+            userRestonse.setLastName(existinguser.getLastName());
+            userRestonse.setCreatedAt(existinguser.getCreatedAt());
+            userRestonse.setUpdatedAt(existinguser.getUpdatedAt());
+
+            return userRestonse;
         }
 
 
@@ -34,6 +46,7 @@ public class UserService {
 
         UserRestonse userRestonse = new UserRestonse();
         userRestonse.setId(saveduser.getId());
+        userRestonse.setKeyClockId(saveduser.getKeyClockId());
         userRestonse.setEmail(saveduser.getEmail());
         userRestonse.setPassword(saveduser.getPassword());
         userRestonse.setFirstName(saveduser.getFirstName());
@@ -64,6 +77,6 @@ public class UserService {
 
     public Boolean existByUserId(String userId) {
         log.info("Calling user validation API for userId: {}", userId);
-        return repository.existsById(userId);
+        return repository.existsByKryClockId(userId);
     }
 }
