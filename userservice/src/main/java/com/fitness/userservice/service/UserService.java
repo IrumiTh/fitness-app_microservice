@@ -39,6 +39,7 @@ public class UserService {
         User user = new User();
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
+        user.setKeyClockId(request.getKeyClockId());
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
 
@@ -77,6 +78,6 @@ public class UserService {
 
     public Boolean existByUserId(String userId) {
         log.info("Calling user validation API for userId: {}", userId);
-        return repository.existsByKryClockId(userId);
+        return repository.existsByKeyClockId(userId);
     }
 }
